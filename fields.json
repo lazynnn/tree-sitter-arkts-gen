@@ -1,0 +1,285 @@
+{
+  "accessorDeclaration": {
+    "identifier": "name"
+  },
+  "additiveExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "ambientAccessorDeclaration": {
+    "identifier": "name"
+  },
+  "ambientClassAccessorDeclaration": {
+    "identifier": "name"
+  },
+  "ambientClassDeclaration": {
+    "identifier": "name"
+  },
+  "ambientConstantOrVariable": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "ambientConstructorDeclaration": {
+    "parameters": "parameters"
+  },
+  "ambientFieldDeclaration": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "ambientFunctionDeclaration": {
+    "identifier": "name"
+  },
+  "ambientIndexerDeclaration": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "ambientInterfaceDeclaration": {
+    "identifier": "name"
+  },
+  "ambientInterfaceMethodDeclaration": {
+    "identifier": "name"
+  },
+  "ambientMethodDeclaration": {
+    "identifier": "name"
+  },
+  "annotationDeclaration": {
+    "identifier": "name"
+  },
+  "annotationField": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "arrayElementType": {
+    "type": "type"
+  },
+  "arrayType": {
+    "type": "type"
+  },
+  "awaitExpression": {
+    "expression": "operand"
+  },
+  "bindingAlias": {
+    "identifier": "name"
+  },
+  "bitwiseAndLogicalExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "breakStatement": {
+    "identifier": "name"
+  },
+  "castExpression": {
+    "type": "type"
+  },
+  "catchClause": {
+    "identifier": "name"
+  },
+  "classAccessorDeclaration": {
+    "identifier": "name"
+  },
+  "classDeclaration": {
+    "identifier": "name",
+    "class_members": "members"
+  },
+  "classFieldDeclaration": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "classMethodDeclaration": {
+    "identifier": "name"
+  },
+  "conditionalAndExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "conditionalOrExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "constantDeclaration": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "constraint": {
+    "type": "type"
+  },
+  "constructorDeclaration": {
+    "parameters": "parameters"
+  },
+  "continueStatement": {
+    "identifier": "name"
+  },
+  "defaultBinding": {
+    "identifier": "name"
+  },
+  "enumBaseType": {
+    "type": "type"
+  },
+  "enumDeclaration": {
+    "identifier": "name"
+  },
+  "enumMember": {
+    "identifier": "name"
+  },
+  "equalityExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "explicitClassMethodOverload": {
+    "identifier": "name"
+  },
+  "explicitFunctionOverload": {
+    "identifier": "name"
+  },
+  "explicitInterfaceMethodOverload": {
+    "identifier": "name"
+  },
+  "exponentiationExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "fieldAccessExpression": {
+    "identifier": "name"
+  },
+  "forVariable": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "ftParameter": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "ftReturnType": {
+    "type": "type"
+  },
+  "functionDeclaration": {
+    "identifier": "name"
+  },
+  "functionWithReceiverDeclaration": {
+    "identifier": "name"
+  },
+  "instanceOfExpression": {
+    "type": "type"
+  },
+  "interfaceDeclaration": {
+    "identifier": "name"
+  },
+  "interfaceDefaultMethodDeclaration": {
+    "identifier": "name"
+  },
+  "interfaceMethodDeclaration": {
+    "identifier": "name"
+  },
+  "interfaceProperty": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "lambdaOptionalParameter": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "lambdaRequiredParameter": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "lambdaSignature": {
+    "identifier": "name"
+  },
+  "loopStatement": {
+    "identifier": "name"
+  },
+  "methodCallExpression": {
+    "identifier": "name"
+  },
+  "multiplicativeExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "nameBinding": {
+    "identifier": "name"
+  },
+  "objectLiteral": {
+    "object_literal_members": "members"
+  },
+  "objectLiteralField": {
+    "identifier": "name"
+  },
+  "objectLiteralMethod": {
+    "identifier": "name"
+  },
+  "optionalParameter": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "overloadList": {
+    "identifier": "name"
+  },
+  "qualifiedName": {
+    "identifier": "name"
+  },
+  "receiverParameter": {
+    "type": "type"
+  },
+  "relationalExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "requiredParameter": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "restParameter": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "returnType": {
+    "type": "type"
+  },
+  "shiftExpression": {
+    "0": "left",
+    "2": "right"
+  },
+  "signature": {
+    "parameters": "parameters"
+  },
+  "singleExportDirective": {
+    "identifier": "name"
+  },
+  "switchStatement": {
+    "identifier": "name"
+  },
+  "ternaryConditionalExpression": {
+    "0": "condition",
+    "2": "when_true",
+    "4": "when_false"
+  },
+  "tupleType": {
+    "type": "type"
+  },
+  "type": {
+    "type": "type"
+  },
+  "typeAlias": {
+    "identifier": "name",
+    "type": "type"
+  },
+  "typeArguments": {
+    "type": "type"
+  },
+  "typeOfExpression": {
+    "expression": "operand"
+  },
+  "typeParameter": {
+    "identifier": "name"
+  },
+  "unaryExpression": {
+    "expression": "operand"
+  },
+  "unionType": {
+    "type": "type"
+  },
+  "variableDeclaration": {
+    "identifier": "name",
+    "type": "type"
+  }
+}
