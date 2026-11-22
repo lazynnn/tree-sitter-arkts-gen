@@ -1,0 +1,46 @@
+name: Deploy Playground to GitHub Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to deploy (default: latest)"
+        required: false
+        default: "latest"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download playground assets from Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p _site
+          if [ "${{ inputs.tag }}" = "latest" ]; then
+            gh release download --repo "${{ github.repository }}" --pattern "index.html" --pattern "tree-sitter-*.wasm" --dir _site
+          else
+            gh release download "${{ inputs.tag }}" --repo "${{ github.repository }}" --pattern "index.html" --pattern "tree-sitter-*.wasm" --dir _site
+          fi
+          if [ -f _site/tree-sitter-arkts.wasm ] && [ ! -f _site/tree-sitter-parser.wasm ]; then
+            mv _site/tree-sitter-arkts.wasm _site/tree-sitter-parser.wasm
+          fi
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
