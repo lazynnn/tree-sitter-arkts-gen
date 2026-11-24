@@ -1,0 +1,393 @@
+{
+  "rename": {
+    "function_call_expression": "CallExpression",
+    "method_call_expression": "CallExpression",
+    "field_access_expression": "PropertyAccessExpression",
+    "indexing_expression": "ElementAccessExpression",
+    "array_literal": "ArrayLiteralExpression",
+    "object_literal": "ObjectLiteralExpression",
+    "record_literal": "ObjectLiteralExpression",
+    "cast_expression": "AsExpression",
+    "ensure_not_nullish_expression": "NonNullExpression",
+    "additive_expression": "BinaryExpression",
+    "multiplicative_expression": "BinaryExpression",
+    "shift_expression": "BinaryExpression",
+    "relational_expression": "BinaryExpression",
+    "equality_expression": "BinaryExpression",
+    "bitwise_and_logical_expression": "BinaryExpression",
+    "conditional_and_expression": "BinaryExpression",
+    "conditional_or_expression": "BinaryExpression",
+    "nullish_coalescing_expression": "BinaryExpression",
+    "exponentiation_expression": "BinaryExpression",
+    "assignment_expression": "BinaryExpression",
+    "expression_sequence": "CommaListExpression",
+    "this_expression": "ThisKeyword",
+    "null_literal": "NullKeyword",
+    "integer_literal": "NumericLiteral",
+    "float_literal": "NumericLiteral",
+    "lambda_expression": "ArrowFunction",
+    "lambda_expression_with_receiver": "ArrowFunction",
+    "variable_declarations": "VariableStatement",
+    "constant_declarations": "VariableStatement",
+    "constant_or_variable_declaration": "VariableStatement",
+    "constant_declaration_list": "VariableDeclarationList",
+    "import_directive": "ImportDeclaration",
+    "export_directive": "ExportDeclaration",
+    "selective_export_directive": "ExportDeclaration",
+    "export_type_directive": "ExportDeclaration",
+    "re_export_directive": "ExportDeclaration",
+    "namespace_declaration": "ModuleDeclaration",
+    "ambient_namespace_declaration": "ModuleDeclaration",
+    "module_declaration": "SourceFile",
+    "type_alias": "TypeAliasDeclaration",
+    "annotation_usage": "Decorator",
+    "annotation_field": "AnnotationPropertyDeclaration",
+    "class_field_declaration": "PropertyDeclaration",
+    "ambient_field_declaration": "PropertyDeclaration",
+    "interface_property": "PropertySignature",
+    "class_method_declaration": "MethodDeclaration",
+    "ambient_method_declaration": "MethodDeclaration",
+    "object_literal_method": "MethodDeclaration",
+    "interface_method_declaration": "MethodSignature",
+    "ambient_interface_method_declaration": "MethodSignature",
+    "interface_default_method_declaration": "MethodSignature",
+    "constructor_declaration": "Constructor",
+    "ambient_constructor_declaration": "Constructor",
+    "ambient_call_signature_declaration": "CallSignature",
+    "ambient_indexer_declaration": "IndexSignature",
+    "class_extends_clause": "HeritageClause",
+    "implements_clause": "HeritageClause",
+    "interface_extends_clause": "HeritageClause",
+    "keyof_type": "TypeOperator",
+    "function_type": "FunctionType",
+    "function_type_with_receiver": "FunctionType",
+    "type_parameter": "TypeParameter",
+    "parameter": "Parameter",
+    "lambda_parameter": "Parameter",
+    "required_parameter": "Parameter",
+    "optional_parameter": "Parameter",
+    "rest_parameter": "Parameter",
+    "lambda_required_parameter": "Parameter",
+    "lambda_optional_parameter": "Parameter",
+    "receiver_parameter": "Parameter",
+    "ft_parameter": "Parameter",
+    "ft_rest_parameter": "Parameter",
+    "all_binding": "NamespaceImport",
+    "default_binding": "ImportClause",
+    "object_literal_field": "PropertyAssignment",
+    "record_literal_element": "PropertyAssignment",
+    "switch_block": "CaseBlock",
+    "static_block": "ClassStaticBlockDeclaration",
+    "ternary_conditional_expression": "ConditionalExpression"
+  },
+  "conditional": {
+    "class_declaration": [
+      {
+        "kind": "StructDeclaration",
+        "when": "\"struct\" keyword"
+      },
+      {
+        "kind": "ClassDeclaration",
+        "when": "default (\"class\" keyword)"
+      }
+    ],
+    "ambient_class_declaration": [
+      {
+        "kind": "StructDeclaration",
+        "when": "\"struct\" keyword"
+      },
+      {
+        "kind": "ClassDeclaration",
+        "when": "default (\"class\" keyword)"
+      }
+    ],
+    "boolean_literal": [
+      {
+        "kind": "TrueKeyword",
+        "when": "value true"
+      },
+      {
+        "kind": "FalseKeyword",
+        "when": "value false"
+      }
+    ],
+    "unary_expression": [
+      {
+        "kind": "VoidExpression",
+        "when": "'void' operator"
+      },
+      {
+        "kind": "PostfixUnaryExpression",
+        "when": "operator after operand (++/--)"
+      },
+      {
+        "kind": "PrefixUnaryExpression",
+        "when": "default (operator before operand)"
+      }
+    ],
+    "function_call_expression": [
+      {
+        "kind": "EtsComponentExpression",
+        "when": "call_arguments contains trailing_lambda"
+      },
+      {
+        "kind": "CallExpression",
+        "when": "default"
+      }
+    ],
+    "multiline_string_literal": [
+      {
+        "kind": "TemplateExpression",
+        "when": "has embedded_expression"
+      },
+      {
+        "kind": "NoSubstitutionTemplateLiteral",
+        "when": "default (no interpolation)"
+      }
+    ],
+    "accessor_declaration": [
+      {
+        "kind": "GetAccessor",
+        "when": "\"get\" keyword"
+      },
+      {
+        "kind": "SetAccessor",
+        "when": "\"set\" keyword"
+      }
+    ],
+    "class_accessor_declaration": [
+      {
+        "kind": "GetAccessor",
+        "when": "\"get\" keyword"
+      },
+      {
+        "kind": "SetAccessor",
+        "when": "\"set\" keyword"
+      }
+    ],
+    "ambient_accessor_declaration": [
+      {
+        "kind": "GetAccessor",
+        "when": "\"get\" keyword"
+      },
+      {
+        "kind": "SetAccessor",
+        "when": "\"set\" keyword"
+      }
+    ],
+    "ambient_class_accessor_declaration": [
+      {
+        "kind": "GetAccessor",
+        "when": "\"get\" keyword"
+      },
+      {
+        "kind": "SetAccessor",
+        "when": "\"set\" keyword"
+      }
+    ],
+    "loop_statement": [
+      {
+        "kind": "LabeledStatement",
+        "when": "label (identifier ':') present"
+      },
+      {
+        "kind": "None",
+        "when": "default (wrapper; the loop child maps by name)"
+      }
+    ],
+    "module_declaration": [
+      {
+        "kind": "ModuleDeclaration",
+        "when": "module_header child present (declare module \"m\" { ... })"
+      },
+      {
+        "kind": "SourceFile",
+        "when": "default (whole file)"
+      }
+    ],
+    "selective_bindings": [
+      {
+        "kind": "NamedExports",
+        "when": "export directive context (parent is selective_export_directive / export_type_directive / re_export_directive)"
+      },
+      {
+        "kind": "NamedImports",
+        "when": "default (parent chain reaches import_directive via bindings)"
+      }
+    ],
+    "name_binding": [
+      {
+        "kind": "ExportSpecifier",
+        "when": "export directive context (selective_bindings inside an export directive)"
+      },
+      {
+        "kind": "ImportSpecifier",
+        "when": "default (selective_bindings inside import_directive)"
+      }
+    ],
+    "single_export_directive": [
+      {
+        "kind": "ExportAssignment",
+        "when": "leading \"default\" alternative (export default <expression | name>)"
+      },
+      {
+        "kind": "ExportDeclaration",
+        "when": "default (plain \"export <name>\" or \"export { name as default }\")"
+      }
+    ],
+    "spread_expression": [
+      {
+        "kind": "SpreadAssignment",
+        "when": "parent is record_literal_element (object/record literal member)"
+      },
+      {
+        "kind": "SpreadElement",
+        "when": "default (array literal / call arguments)"
+      }
+    ]
+  },
+  "forbidden_categories": {
+    "arkts_forbidden": {
+      "basis": "arkts-no-* linter rules (fork src/linter, 83 rules); the dropped placeholder names Element/TypeMember were JSX/object-literal-type stand-ins whose intent is covered by the Jsx* and TypeLiteral entries",
+      "kinds": {
+        "JsxElement": "arkts-no-jsx",
+        "JsxOpeningElement": "arkts-no-jsx",
+        "JsxClosingElement": "arkts-no-jsx",
+        "JsxSelfClosingElement": "arkts-no-jsx",
+        "JsxExpression": "arkts-no-jsx",
+        "JsxFragment": "arkts-no-jsx",
+        "JsxOpeningFragment": "arkts-no-jsx",
+        "JsxClosingFragment": "arkts-no-jsx",
+        "JsxAttribute": "arkts-no-jsx",
+        "JsxAttributes": "arkts-no-jsx",
+        "JsxSpreadAttribute": "arkts-no-jsx",
+        "JsxText": "arkts-no-jsx",
+        "JsxTextAllWhiteSpaces": "arkts-no-jsx",
+        "RegularExpressionLiteral": "arkts-no-regexp-literals",
+        "ForInStatement": "arkts-no-for-in",
+        "FunctionExpression": "arkts-no-func-expressions",
+        "ClassExpression": "arkts-no-class-literals",
+        "DeleteExpression": "arkts-no-delete",
+        "WithStatement": "arkts-no-with",
+        "ArrayBindingPattern": "arkts-no-destruct-assignment/-decls/-params",
+        "ObjectBindingPattern": "arkts-no-destruct-assignment/-decls/-params",
+        "BindingElement": "arkts-no-destruct-assignment/-decls/-params",
+        "YieldExpression": "arkts-no-generators",
+        "TypeLiteral": "arkts-no-obj-literals-as-types",
+        "ConstructSignature": "arkts-no-ctor-signatures-iface",
+        "AssertClause": "arkts-no-import-assertions",
+        "AssertEntry": "component of the import assertion clause (arkts-no-import-assertions)",
+        "NamespaceExportDeclaration": "arkts-no-umd",
+        "ImportEqualsDeclaration": "removed by decision: ArkTS disallows require-imports",
+        "ExternalModuleReference": "component of the disallowed import-equals require form"
+      }
+    },
+    "not_in_spec": {
+      "basis": "TS-only syntax absent from the ArkTS spec grammar; the fork parses it as a TS superset",
+      "kinds": {
+        "DebuggerStatement": "no production; no rule; JS debugging statement",
+        "TaggedTemplateExpression": "spec templates have no tag form",
+        "SatisfiesExpression": "TS 4.9 `satisfies`; not in spec",
+        "TypeAssertionExpression": "angle cast `<T>x`; ArkTS uses `as`",
+        "NamedTupleMember": "labeled tuples not in spec tupleType",
+        "TypePredicate": "no `x is T` / `asserts x` return-type predicate production",
+        "ConstructorType": "TS `new () => T` type absent from spec type alternatives",
+        "TypeQuery": "no `typeof T` type production",
+        "OptionalType": "tuple optional element `T?` not in spec tupleType",
+        "RestType": "tuple rest element `...T` not in spec tupleType",
+        "IntersectionType": "spec types have no intersection form",
+        "ConditionalType": "TS conditional types absent from spec",
+        "InferType": "TS infer types absent from spec",
+        "IndexedAccessType": "TS indexed access types absent from spec",
+        "MappedType": "TS mapped types absent from spec",
+        "TemplateLiteralType": "TS template literal types absent from spec",
+        "TemplateLiteralTypeSpan": "component of template literal types",
+        "ImportType": "TS import types absent from spec",
+        "ImportTypeAssertionContainer": "component of import type nodes",
+        "ComputedPropertyName": "no production; member/property names are identifiers in the spec grammar",
+        "MetaProperty": "no `new.target` / `import.meta` production",
+        "ShorthandPropertyAssignment": "object literal fields require `name: value`; no shorthand in spec"
+      }
+    },
+    "parser_internal": {
+      "basis": "synthesized/marker nodes with no syntax behind them",
+      "kinds": {
+        "FirstStatement": "enum marker",
+        "LastStatement": "enum marker",
+        "FirstTypeNode": "enum marker",
+        "LastTypeNode": "enum marker",
+        "MissingDeclaration": "synthesized",
+        "NotEmittedStatement": "synthesized",
+        "PartiallyEmittedExpression": "synthesized",
+        "SyntheticExpression": "synthesized",
+        "SyntheticReferenceExpression": "synthesized",
+        "OmittedExpression": "synthesized (spread holes)",
+        "JSDocSignature": "JSDoc internal",
+        "JSDocTypeExpression": "JSDoc internal",
+        "JSDocTypeLiteral": "JSDoc internal",
+        "UnparsedPrologue": "unparsed-source bundling machinery; never produced by parsing",
+        "UnparsedPrepend": "unparsed-source bundling machinery; never produced by parsing",
+        "UnparsedText": "unparsed-source bundling machinery; never produced by parsing",
+        "UnparsedInternalText": "unparsed-source bundling machinery; never produced by parsing",
+        "UnparsedSyntheticReference": "unparsed-source bundling machinery; never produced by parsing",
+        "Bundle": "unparsed-source bundling machinery; never produced by parsing",
+        "UnparsedSource": "unparsed-source bundling machinery; never produced by parsing",
+        "InputFiles": "unparsed-source bundling machinery; never produced by parsing",
+        "SyntaxList": "synthesized list node",
+        "MergeDeclarationMarker": "synthesized transpile marker",
+        "EndOfDeclarationMarker": "synthesized transpile marker",
+        "Count": "enum count sentinel; never a node kind",
+        "JSDocNameReference": "JSDoc internal",
+        "JSDocMemberName": "JSDoc internal",
+        "JSDocAllType": "JSDoc internal",
+        "JSDocUnknownType": "JSDoc internal",
+        "JSDocNullableType": "JSDoc internal",
+        "JSDocNonNullableType": "JSDoc internal",
+        "JSDocOptionalType": "JSDoc internal",
+        "JSDocFunctionType": "JSDoc internal",
+        "JSDocVariadicType": "JSDoc internal",
+        "JSDocNamepathType": "JSDoc internal",
+        "JSDoc": "JSDoc internal",
+        "JSDocText": "JSDoc internal",
+        "JSDocLink": "JSDoc internal",
+        "JSDocLinkCode": "JSDoc internal",
+        "JSDocLinkPlain": "JSDoc internal",
+        "JSDocTag": "JSDoc internal",
+        "JSDocAugmentsTag": "JSDoc internal",
+        "JSDocImplementsTag": "JSDoc internal",
+        "JSDocAuthorTag": "JSDoc internal",
+        "JSDocDeprecatedTag": "JSDoc internal",
+        "JSDocClassTag": "JSDoc internal",
+        "JSDocPublicTag": "JSDoc internal",
+        "JSDocPrivateTag": "JSDoc internal",
+        "JSDocProtectedTag": "JSDoc internal",
+        "JSDocReadonlyTag": "JSDoc internal",
+        "JSDocOverrideTag": "JSDoc internal",
+        "JSDocCallbackTag": "JSDoc internal",
+        "JSDocEnumTag": "JSDoc internal",
+        "JSDocParameterTag": "JSDoc internal",
+        "JSDocReturnTag": "JSDoc internal",
+        "JSDocThisTag": "JSDoc internal",
+        "JSDocTypeTag": "JSDoc internal",
+        "JSDocTemplateTag": "JSDoc internal",
+        "JSDocTypedefTag": "JSDoc internal",
+        "JSDocSeeTag": "JSDoc internal",
+        "JSDocPropertyTag": "JSDoc internal"
+      }
+    },
+    "by_design_anonymous": {
+      "basis": "syntax accepted but represented as anonymous tokens / inside other nodes — no named node to map",
+      "kinds": {
+        "EmptyStatement": "`;` handled as statement alternative (anonymous)",
+        "SemicolonClassElement": "member `;` handled by terminator suffix (anonymous)",
+        "ModuleBlock": "braced declare-module body is inline in module_declaration",
+        "ParenthesizedType": "`'(' type ')'` is an inline alternative of the `type` rule; no named node",
+        "LiteralType": "literal types are the `type` rule's string_literal alternative (maps as StringLiteral); no wrapper node",
+        "ExpressionWithTypeArguments": "heritage targets are type_reference children of class_extends_clause / implements_clause; no separate wrapper",
+        "TemplateSpan": "template text/expression pairs are inline in multiline_string_literal (embedded_expression children); no named span node",
+        "NamespaceExport": "`export * as ns` is an inline alternative of re_export_directive (anonymous `*` + binding_alias); no named wrapper",
+        "ThisType": "fork node for the anonymous 'this' type in return types/receiver parameters; spec grammar has no named node"
+      }
+    }
+  }
+}
