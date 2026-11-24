@@ -87,14 +87,12 @@ _TERMINATOR_SUFFIX = {
     "ambientDeclaration",
     # members
     "classMember",
-    "interfaceMember",
     "enumMember",
     "annotationField",
     "ambientClassMember",
     "ambientFunctionDeclaration",
     "ambientMethodDeclaration",
     "ambientFieldDeclaration",
-    "ambientInterfaceMember",
     # statements with an optional terminator (throw only; return/break/
     # continue carry ASI terminators via _SYNTACTIC_OVERRIDES — JS
     # restricted productions, fork-matching)
@@ -102,6 +100,11 @@ _TERMINATOR_SUFFIX = {
     # directives
     "importDirective",
     "exportDirective",
+}
+
+_COMMA_OR_SEMI_SUFFIX = {
+    "interfaceMember",
+    "ambientInterfaceMember",
 }
 
 # The spec defines MultilineStringLiteral (no interpolation) and
@@ -891,6 +894,8 @@ class GrammarEmitter:
         # Wrap order: terminator suffix -> extra alternatives -> outermost prec().
         if a.name in _TERMINATOR_SUFFIX:
             body = "seq(\n      " + body + ',\n      optional(";"),\n    )'
+        elif a.name in _COMMA_OR_SEMI_SUFFIX:
+            body = "seq(\n      " + body + ',\n      optional(choice(";", ",")),\n    )'
         if a.name in _EXTRA_ALTERNATIVES:
             extras = ", ".join(_EXTRA_ALTERNATIVES[a.name])
             body = f"choice(\n      {body},\n      {extras},\n    )"
@@ -926,6 +931,16 @@ class GrammarEmitter:
             "module.exports = grammar({\n"
             f"  name: '{_GRAMMAR_NAME}',\n\n"
             "  word: $ => $.identifier,\n\n"
+            "  reserved: {\n"
+            "    global: $ => [\n"
+            '      "break", "case", "class", "const", "continue",\n'
+            '      "default", "do", "else", "enum", "export", "extends",\n'
+            '      "false", "for", "if", "instanceof",\n'
+            '      "interface", "let", "new", "return", "super",\n'
+            '      "switch", "this", "throw", "true", "try", "typeof",\n'
+            '      "while",\n'
+            "    ],\n"
+            "  },\n\n"
             # Whitespace extras are exactly the spec's lexical input
             # elements: §2.3 white spaces (U+0020, U+0009, U+000B, U+000C,
             # U+00A0 NBSP, U+FEFF ZWNBSP) plus §2.4 line separators

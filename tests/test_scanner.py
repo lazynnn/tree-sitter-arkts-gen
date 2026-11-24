@@ -150,3 +150,29 @@ def test_return_newline_paren_known_divergence(binding):
     assert ret.start_point.row == 0 and ret.end_point.row == 1
     parens = [n for n in binding.iter_nodes(ret) if n.type == "parenthesized_expression"]
     assert len(parens) == 1 and parens[0].text == b"(x)"
+
+
+def test_interface_comma_and_semicolon_separators(binding):
+    src = "interface Foo {\n  a: number,\n  b: string;\n  c?: boolean,\n}\n"
+    tree = binding.parse(src)
+    assert not binding.has_errors(tree)
+    members = [n for n in binding.iter_nodes(tree.root_node) if n.type == "interface_member"]
+    assert len(members) == 3
+
+
+@pytest.mark.parametrize(
+    "src",
+    [
+        "let choice: typeof option;",
+        "interface I { new (s: number): I }",
+        "const C = class { x: number = 1 };",
+        'const s = "ok" as const;',
+    ],
+)
+def test_reserved_keywords_rejected_in_forbidden_positions(binding, src):
+    assert binding.has_errors(binding.parse(src))
+
+
+def test_void_and_finally_remain_valid(binding):
+    assert not binding.has_errors(binding.parse("let f: (x: number) => void;"))
+    assert not binding.has_errors(binding.parse("fetchData().finally();"))

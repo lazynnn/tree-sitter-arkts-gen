@@ -60,6 +60,23 @@ function collectTsOnlyFeatures(sf) {
     ) {
       found.add("ConstructorParameterProperty");
     }
+    if (
+      node.kind === ts.SyntaxKind.AsExpression &&
+      node.type &&
+      node.type.kind === ts.SyntaxKind.TypeReference &&
+      node.type.typeName &&
+      node.type.typeName.kind === ts.SyntaxKind.Identifier &&
+      node.type.typeName.escapedText === "const"
+    ) {
+      found.add("AsConstExpression");
+    }
+    if (
+      node.kind === ts.SyntaxKind.ImportSpecifier &&
+      node.propertyName &&
+      node.propertyName.kind === ts.SyntaxKind.DefaultKeyword
+    ) {
+      found.add("ImportDefaultAs");
+    }
     ts.forEachChild(node, visit);
   }
   visit(sf);
